@@ -1,0 +1,370 @@
+/* Main Theme Colors */
+:root {
+    --primary-color: #0a192f; /* Dark Blue Background */
+    --secondary-color: #64ffda; /* Cyan for accents */
+    --text-color: #ccd6f6; /* Light gray text */
+    --highlight-color: #ff5c5c; /* Red for call-to-actions */
+    --navbar-background: #112240; /* Slightly lighter dark blue for the island */
+    --border-color: rgba(255, 255, 255, 0.1); /* Transparent white for border */
+    --logo-color: #ff5c5c; /* Highlight color for the logo */
+    --bottom-color: #2e1d59; /* Color for the transition at the bottom */
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+/* Background Image for the Whole Page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace; /* Use Roboto Mono for a modern, coding look */
+    background: url('https://i.imgur.com/ktULxMJ.png') no-repeat center center fixed;
+    background-size: cover; /* Cover the entire viewport */
+    background-attachment: fixed;
+    background-color: var(--bottom-color); /* Fallback color for the transition */
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-y: scroll; /* Add vertical scroll bar */
+}
+
+body::after {
+    content: '';
+    position: fixed; /* Change from absolute to fixed */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, var(--bottom-color));
+    pointer-events: none;
+    transition: bottom 0.5s ease; /* Smooth transition */
+}
+
+
+header {
+    padding: 40px 0; /* Increased padding to push content down */
+    text-align: center;
+}
+
+.navbar-island {
+    background-color: var(--navbar-background);
+    padding: 10px 20px;
+    border-radius: 10px; /* Reduced radius for a more rectangular look */
+    border: 1px solid var(--border-color); /* Thin transparent border */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: inline-block;
+}
+
+nav {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Logo Styling */
+nav ul li a.logo {
+    font-size: 24px; /* Larger font size for the logo */
+    color: var(--logo-color); /* Make the logo stand out */
+    font-family: 'Roboto Mono', monospace; /* Use Roboto Mono for a modern look */
+    font-weight: 700; /* Bold weight */
+    text-transform: lowercase; /* Lowercase style */
+}
+
+nav ul li a:hover {
+    color: var(--highlight-color);
+}
+
+/* Highlight active link */
+nav ul li a.active {
+    color: var(--highlight-color);
+}
+
+/* Smaller Font Size for Navigation Links */
+nav ul li a.small-font {
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+/* Contact Button Styling */
+nav ul li a.contact-button {
+    padding: 8px 16px; /* Smaller padding for a smaller button */
+    background-color: var(--text-color); /* Filled background color */
+    border: 2px solid transparent; /* Transparent border */
+    color: var(--primary-color); /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a.contact-button:hover {
+    background-color: var(--highlight-color); /* Change background on hover */
+    color: var(--primary-color); /* Change text color on hover */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 200px; /* Add margin to push content up */
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700; /* Bold weight for headings */
+}
+
+.hero-section p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #a2aeda; /* Intermediate color for text */
+}
+
+/* CTA Button Styling */
+.hero-section .cta-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ccd6f6; /* Text color for button text */
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Highlight button and text on hover */
+.hero-section .cta-button:hover {
+    color: var(--highlight-color); /* Change text color on hover */
+}
+
+.hero-section .cta-icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* Size of the circular button */
+    height: 32px; /* Size of the circular button */
+    border: 2px solid #ccd6f6; /* Circular border color */
+    border-radius: 50%; /* Circular shape */
+    background-color: transparent; /* Transparent background */
+    margin-right: 10px; /* Space between icon and text */
+    text-align: center;
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Change arrow color on hover */
+.hero-section .cta-icon-container:hover {
+    border-color: var(--highlight-color); /* Change border color on hover */
+    background-color: var(--highlight-color); /* Change background color on hover */
+}
+
+.hero-section .cta-icon-container:hover .cta-icon {
+    color: white; /* Change arrow color on hover */
+}
+
+.hero-section .cta-icon {
+    font-size: 16px; /* Size of the arrow */
+    color: #ccd6f6; /* Arrow color */
+}
+
+.hero-section .cta-text {
+    font-size: 18px; /* Font size for the text */
+    color: #ccd6f6; /* Color for the text */
+}
+
+
+
+.services-section {
+    display: flex;
+    justify-content: center; /* Center the panels horizontally */
+    gap: 20px; /* Space between panels */
+    padding: 20px; /* Adjusted padding */
+    background-color: transparent; /* Make background transparent to show the image */
+    margin-top: -175px; /* Reduced space from the button above */
+}
+
+.panel {
+    background-color: var(--navbar-background); /* Matches the navigation bar */
+    padding: 15px 25px; /* Adjusted padding for a more rectangular shape */
+    border-radius: 8px; /* Reduced radius for a more rectangular look */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Deeper shadow for floating effect */
+    width: 300px; /* Fixed width for each panel */
+    color: var(--text-color);
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    position: relative; /* Positioning for z-index effect */
+    z-index: 1; /* Ensure panels ar on top */
+}
+
+.panel h2 {
+    margin-top: 0;
+}
+
+.panel p {
+    margin-bottom: 0;
+}
+
+/* Styles for the transparent "About" button inside the panels */
+.about-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid transparent; /* Invisible border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: transparent; /* Transparent background */
+    color: var(--text-color); /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    margin-top: 20px; /* Margin to add space from the content above */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+/* Add an arrow before the text */
+.about-button::before {
+    content: "\2192"; /* Unicode for right arrow */
+    display: inline-block;
+    margin-right: 10px; /* Space between the arrow and text */
+    transform: rotate(-45deg); /* Initial rotation of the arrow */
+    font-size: 20px; /* Size of the arrow */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for rotation and color change */
+}
+
+/* Hover effect for the transparent "About" button */
+.about-button:hover {
+    background-color: var(--text-color); /* Change background color on hover */
+    color: var(--primary-color); /* Change text color on hover */
+}
+
+/* Change the arrow rotation on hover */
+.about-button:hover::before {
+    transform: rotate(1deg); /* Rotate the arrow to 35 degrees on hover */
+}
+
+/* Style for the panels */
+.services-section .panel {
+    background-color: var(--navbar-background); /* Matching background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for the panels */
+.services-section .panel:hover {
+    background-color: var(--highlight-color); /* Change background on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Adjusting the height of the panels */
+.panel {
+    height: 250px; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px; /* Increased padding for breathing space */
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Selected Work Section */
+.selected-work-section {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: transparent; /* Transparent background */
+    margin-bottom: 100px; /* Space below the section */
+}
+
+/* Style for Selected Work title */
+.selected-work-section h2 {
+    color: #ccd6f6; /* Change the color of the title */
+    font-size: 2rem; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Add margin for spacing */
+    text-align: center; /* Center align the title */
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.work-item {
+    background-color: rgba(17, 34, 64, 0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 350px; /* Maximum width for each item */
+}
+
+.work-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.9); /* Stronger shadow on hover */
+}
+
+
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.work-item h3 {
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    color: #ccd6f6; /* Text color for project titles */
+}
+
+.work-item p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    color: #8892b0; /* Text color for project descriptions */
+}
+
+/* Style for the Selected Work section panels */
+.work-section .panel {
+    background-color: var(--navbar-background); /* Background color of the panel */
+    padding: 30px; /* Increased padding for a more spacious look */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for more emphasis */
+    width: 400px; /* Increased width for larger panels */
+    height: 300px; /* Increased height for larger panels */
+    color: var(--text-color);
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    margin: 0 auto; /* Center panels horizontally */
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
