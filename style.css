@@ -864,3 +864,10 @@ body {
 button, .nav-link {
     padding: 10px 20px; /* Larger clickable area */
 }
+
+@media (max-width: 768px) {
+    body {
+        background-position: center top; /* Adjust position for smaller screens */
+        background-size: cover;
+    }
+}
