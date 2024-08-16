@@ -5,38 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tornet.</title>
+    <link rel="icon" href="TornetMarket.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+
 
 <body>
     <header>
         <div class="navbar-island">
             <nav>
                 <ul>
-                    <li><a href="#home" class="logo">tornet.</a></li>
+                    <li>
+                        <a href="#home" class="logo">
+                            <img src="TornetMarketLogoTransparent.png" alt="Tornet Logo" style="width: 64px; height: 54dpx; vertical-align: middle; margin-right: 8px;">
+                            tornet.
+                        </a>
+                    </li>
                     <li><a href="#services" class="small-font">SERVICES</a></li>
                     <li><a href="#work" class="small-font">WORK</a></li>
                     <li><a href="#about" class="small-font">ABOUT</a></li>
                     <li><a href="#blog" class="small-font">BLOG</a></li>
-                    <li><a href="#contact" class="contact-button">CONTACT</a></li>
+                    <li><a href="#contact" class="contact-button" id="openModal">CONTACT</a></li>
+                    <!-- Modal Structure -->
+                    <div id="contactModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-btn" id="closeModal">&times;</span>
+                            <h2>Contact Owner</h2>
+                            <form id="contactForm">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" required></textarea>
+                                <button type="submit">SEND MESSAGE</button>
+                            </form>
+                        </div>
+                    </div>
                 </ul>
             </nav>
         </div>
     </header>
+    
+    
 
     <section class="hero-section" id="home">
         <h1>Full Stack Developer & Cybersecurity Specialist</h1>
         <p>Premium Full Stack Development, PSA services, and Cybersecurity consulting to help you stand out.</p>
-        <a href="#selected-work" class="cta-button">
+        <a href="#services" class="cta-button">
             <span class="cta-icon-container">
                 <span class="cta-icon">&#9660;</span> <!-- Downward arrow -->
             </span>
-            <span class="cta-text">MY SERVICES</span>
+            <span class="selected-work">MY SERVICES</span>
         </a>                
     </section>
 
-    <section class="services-section">
+    <section class="badge-carousel-section">
+        <div class="badge-carousel-container">
+            <div class="badge-carousel">
+                <div class="ChatGPT"><img src="https://i.imgur.com/LvGe1A0.png alt="Badge 1"></div>
+                <div class="VS"><img src="https://i.imgur.com/3dKxNjb.png" alt="Badge 2"></div>
+                <div class="VScode"><img src="https://i.imgur.com/1WoTnlD.png" alt="Badge 3"></div>
+                <div class="Canva"><img src="https://i.imgur.com/NHMExid.png" alt="Badge 4"></div>
+                <div class="Github"><img src="https://i.imgur.com/d57mLiA.png" alt="Badge 5"></div>
+                <div class="Windows"><img src="https://i.imgur.com/zdD4u60.png" alt="Badge 6"></div>
+                <div class="Malwarebytes"><img src="https://i.imgur.com/GrWHyNr.png" alt="Badge 7"></div>
+                <div class="Windows"><img src="https://i.imgur.com/zwwwKye.png" alt="Badge 8"></div>
+                <div class="Cloudfare"><img src="https://i.imgur.com/ttjXQtq.png" alt="Badge 9"></div>
+                <div class="Linux"><img src="https://i.imgur.com/Z2NG7va.png" alt="Badge 10"></div>
+                <!-- Duplicate badges for seamless scrolling -->
+                <div class="ChatGPT"><img src="https://i.imgur.com/LvGe1A0.png alt="Badge 1"></div>
+                <div class="VS"><img src="https://i.imgur.com/3dKxNjb.png" alt="Badge 2"></div>
+                <div class="VScode"><img src="https://i.imgur.com/1WoTnlD.png" alt="Badge 3"></div>
+                <div class="Canva"><img src="https://i.imgur.com/NHMExid.png" alt="Badge 4"></div>
+                <div class="Github"><img src="https://i.imgur.com/d57mLiA.png" alt="Badge 5"></div>
+                <div class="Windows"><img src="https://i.imgur.com/zdD4u60.png" alt="Badge 6"></div>
+                <div class="Malwarebytes"><img src="https://i.imgur.com/GrWHyNr.png" alt="Badge 7"></div>
+                <div class="Windows"><img src="https://i.imgur.com/zwwwKye.png" alt="Badge 8"></div>
+                <div class="Cloudfare"><img src="https://i.imgur.com/ttjXQtq.png" alt="Badge 9"></div>
+                <div class="Linux"><img src="https://i.imgur.com/Z2NG7va.png" alt="Badge 10"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services-section" id="services">
         <div class="panel">
             <h2>WEB DESIGN</h2>
             <p>Innovative web designs that blend creativity and functionality to enhance your brand’s online presence.</p>
@@ -55,7 +111,7 @@
     </section>
 
     <section class="selected-work-section" id="selected-work">
-        <h2>Signature Projects</h2>
+        <h2>Signature Projects</h2> 
         <div class="work-grid">
             <!-- Add your work items here -->
             <div class="work-item">
@@ -88,11 +144,222 @@
         </div>
     </section>
 
+    <section id="timeline">
+        <h2 class="timeline-heading">The Workflow</h2>
+        <div class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="badge">1 hour</div>
+                        <p>ARE WE A FIT?</p>
+                        <h3>INITIAL CONSULTATION</h3>
+                        <p>Let’s explore whether and how I can support your project. What are your needs for your new website or software? Why are you looking to update or create something new? What objectives are you aiming to achieve, and how can we address your challenges?</p>
+                        <ul class="timeline-details">
+                            <li>We get to know each other better</li>
+                            <li>Determine how I can best assist you</li>
+                            <li>Understand the goals you have for your website</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="badge">1 day</div>
+                        <p>WE NEED A STRATEGY</p>
+                        <h3>CONCEPT & PLANNING</h3>
+                        <p>We'll collaborate to craft a strategy that aligns your objectives with the needs of your target audience. From this plan, I'll create initial wireframes and an interactive prototype, giving us a clear view of the website and user interface.</p>
+                        <ul class="timeline-details">
+                            <li>UX Design</li>
+                            <li>Wireframes</li>
+                            <li>Interactive Prototype</li>
+                        </ul>
+                    </div>
+                </div>                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="badge">1 week</div>
+                        <p>MAKING IT HAPPEN</p>
+                        <H3>DESIGN & DEVELOPMENT</H3>
+                        <p>Now the real work begins. Based on our developed concept, I create a polished and high-quality design that aligns with your brand. This design not only sets you apart from competitors but also perfectly suits your target audience and ensures a superior user experience. Along with the design, I'll start coding and developing the foundational software components.</p>
+                        <ul class="timeline-details">
+                            <li>High-end design tailored to your brand</li>
+                            <li>Interactive prototype</li>
+                            <li>Initial coding and software development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="badge">1 day</div>
+                        <p>ADDING THE FINAL TOUCHES</p>
+                        <H3>DEVELOPMENT</H3>
+                        <p>In this stage, we transform your polished design into a fully functional website and software solution. I will craft a bespoke website with a modular framework and integrate a CMS for ease of management. To enhance the user experience, I'll implement dynamic animations and features that make your project stand out.</p>
+                        <ul class="timeline-details">
+                            <li>Tailor-made website and software</li>
+                            <li>Modular design architecture</li>
+                            <li>CMS integration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="badge">1 hour</div>
+                        <p>READY TO LAUNCH</p>
+                        <H3>ONBOARDING SESSION</H3>
+                        <p>In a tailored workshop, I'll teach you how to easily update your new website and software. You’ll receive custom video tutorials to guide you through managing your site and software without needing a complicated backend or additional programming support. It’s designed to be intuitive and straightforward.</p>
+                        <ul class="timeline-details">
+                            <li>Personalized training session</li>
+                            <li>Custom video tutorials</li>
+                            <li>Direct editing of website and software content</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <div class="section-title">
+            <h2 class="reviews-heading">Hear From My Clients</h2>
+        </div>
+        <div class="reviews-carousel">
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <h3>Outstanding Web Design</h3>
+                    <p>"Working with Tornet was a game changer for our company. The innovative web design they delivered not only transformed our online presence but also made our site incredibly user-friendly. We’ve seen a significant increase in engagement and conversions. Highly recommend their web design services!"</p>
+                    <p><strong>Name:</strong> Emily S.</p>
+                    <p><strong>Date:</strong> July 4, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Exceptional Development Solutions</h3>
+                    <p>"I’m thoroughly impressed with the tailored development solutions provided by Tornet. They took our complex requirements and turned them into a seamless, robust software platform that works flawlessly. Their attention to detail and commitment to performance is unmatched. Worth every penny!"</p>
+                    <p><strong>Name:</strong> James T.</p>
+                    <p><strong>Date:</strong> July 15, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Top-notch Cybersecurity</h3>
+                    <p>"The cybersecurity measures and penetration testing from Tornet were top-notch. They identified several vulnerabilities in our system that we hadn't even considered. Their expertise in hacking and PSA has made us feel much more secure. Excellent service!"</p>
+                    <p><strong>Name:</strong> Linda M.</p>
+                    <p><strong>Date:</strong> July 28, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Creative and Functional Design</h3>
+                    <p>"From start to finish, the web design experience with Tornet was exceptional. They crafted a creative and functional site that perfectly represents our brand. The process was smooth, and the end result exceeded our expectations. A fantastic partner for web design!"</p>
+                    <p><strong>Name:</strong> Robert H.</p>
+                    <p><strong>Date:</strong> August 5, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Seamless Integration and Performance</h3>
+                    <p>"The development work by Tornet exceeded our expectations. The custom software they created is both powerful and easy to use. We’re very satisfied with how they handled our requirements and delivered a solution that works perfectly."</p>
+                    <p><strong>Name:</strong> Sarah K.</p>
+                    <p><strong>Date:</strong> August 10, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Effective Hacking & PSA Services</h3>
+                    <p>"We were impressed by the advanced cybersecurity measures and penetration testing provided by Tornet. They thoroughly assessed our systems and helped us address critical security issues. Their expertise is evident and invaluable."</p>
+                    <p><strong>Name:</strong> Michael L.</p>
+                    <p><strong>Date:</strong> August 16, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Remarkable Web Design</h3>
+                    <p>"Tornet’s web design services were exceptional. They delivered a visually stunning and highly functional website that truly captures our brand essence. The process was efficient, and the result was beyond our expectations."</p>
+                    <p><strong>Name:</strong> Jessica R.</p>
+                    <p><strong>Date:</strong> July 6, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Flawless Software Development</h3>
+                    <p>"Tornet provided outstanding development solutions that perfectly met our needs. The custom software they developed is not only efficient but also user-friendly. Their professionalism and skill are second to none."</p>
+                    <p><strong>Name:</strong> David P.</p>
+                    <p><strong>Date:</strong> July 8, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Top-Level Security Services</h3>
+                    <p>"Tornet’s expertise in cybersecurity and penetration testing is impressive. They identified critical security flaws and provided effective solutions. Their services gave us peace of mind knowing our systems are well-protected."</p>
+                    <p><strong>Name:</strong> Laura B.</p>
+                    <p><strong>Date:</strong> July 12, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Innovative Digital Solutions</h3>
+                    <p>"The web design and development work by Tornet transformed our digital presence. They offered innovative solutions that perfectly fit our needs and enhanced our online visibility. Highly recommended for anyone looking to elevate their digital game."</p>
+                    <p><strong>Name:</strong> Mark F.</p>
+                    <p><strong>Date:</strong> July 18, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Exceptional Development Expertise</h3>
+                    <p>"Tornet’s development services delivered exactly what we needed. The software they created is robust and reliable, making our operations smoother and more efficient. Their attention to detail and dedication were impressive."</p>
+                    <p><strong>Name:</strong> Anna W.</p>
+                    <p><strong>Date:</strong> July 22, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Advanced Cybersecurity Solutions</h3>
+                    <p>"We were extremely satisfied with the advanced cybersecurity solutions from Tornet. They conducted thorough testing and provided actionable insights to improve our security posture. Their expertise in hacking and PSA is top-tier."</p>
+                    <p><strong>Name:</strong> Tom C.</p>
+                    <p><strong>Date:</strong> July 25, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Highly Effective Web Design</h3>
+                    <p>"Tornet’s web design services exceeded our expectations. They created a visually appealing and highly functional website that has significantly improved our online engagement. The entire process was seamless and professional."</p>
+                    <p><strong>Name:</strong> Olivia J.</p>
+                    <p><strong>Date:</strong> August 1, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Seamless Software Integration</h3>
+                    <p>"The custom software developed by Tornet has integrated seamlessly into our existing systems. Their work has enhanced our operational efficiency and provided a great user experience. We’re very pleased with the outcome."</p>
+                    <p><strong>Name:</strong> Brian N.</p>
+                    <p><strong>Date:</strong> August 4, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Exceptional Cybersecurity Measures</h3>
+                    <p>"Tornet’s cybersecurity measures have been crucial in protecting our systems. Their comprehensive approach to penetration testing and security audits helped us address vulnerabilities effectively. Highly recommend their services."</p>
+                    <p><strong>Name:</strong> Karen H.</p>
+                    <p><strong>Date:</strong> August 8, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Professional Web Design Services</h3>
+                    <p>"Working with Tornet was a pleasure. Their web design services delivered a modern, high-quality website that perfectly aligns with our brand. The results speak for themselves, and we’re thrilled with the final product."</p>
+                    <p><strong>Name:</strong> Steven G.</p>
+                    <p><strong>Date:</strong> August 12, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Custom Software Excellence</h3>
+                    <p>"Tornet’s expertise in software development is evident in the custom solutions they delivered. The software they created has enhanced our business processes and provided a significant boost in performance. Outstanding work!"</p>
+                    <p><strong>Name:</strong> Rachel D.</p>
+                    <p><strong>Date:</strong> August 14, 2024</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Comprehensive Security Testing</h3>
+                    <p>"Tornet’s thorough cybersecurity testing helped us identify and address potential vulnerabilities in our system. Their advanced techniques and detailed reporting were exactly what we needed to improve our security measures."</p>
+                    <p><strong>Name:</strong> John L.</p>
+                    <p><strong>Date:</strong> August 16, 2024</p>
+                </div>
+                <!-- Add more carousel items as needed -->
+            </div>
+        </div>
+    </section>    
+
+    <footer>
+        <p>Coded By : Nicolas Franco</p>
+        <p>&copy; tornet. │ Owned By Tornet Market ™ │ All rights reserved.</p>
+        <button id="leave-review-btn">LEAVE REVIEW</button>
+    </footer>
+    <!-- Feedback Modal -->
+<div id="feedbackModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeFeedbackModal">&times;</span>
+        <h2>We would love to hear from you.</h2>
+        <form id="feedbackForm">
+            <label for="feedback-name">Name:</label>
+            <input type="text" id="feedback-name" name="name" required>
+            <label for="feedback-email">Email (Optional):</label>
+            <input type="email" id="feedback-email" name="email">
+            <label for="feedback-text">Review/Feedback:</label>
+            <textarea id="feedback-text" name="feedback" placeholder="Type your feedback here..." required></textarea>
+            <button type="submit" id="send-feedback-btn">Leave Review</button>
+        </form>
+    </div>
+</div>
+
     <!-- Link to the external JavaScript file -->
     <script src="script.js"></script>
-    
-    
-    
 </body>
 
 </html>
