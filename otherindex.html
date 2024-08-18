@@ -1,28 +1,112 @@
 <!DOCTYPE html>
+<!-- Coding By UnknownBlackHat - instagram.com/swiping.cc -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Stack Developer & Cybersecurity Specialist</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tornet Market ™ | Home</title>
+  <meta
+    content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    name="viewport"
+  />
+  <link
+    rel="icon"
+    href="assets/img/TornetMarketIcon.ico"
+    type="image/x-icon"
+  />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      position: relative; /* Ensure the profile info panel is positioned correctly */
+      color: #fff; /* Set text color to white */
+    }
+    #profileInfo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      text-align: right;
+      font-size: 1rem;
+      border: 2px solid #888; /* Gray border */
+      padding: 10px 20px; /* Padding */
+      border-radius: 10px; /* Rounded corners */
+      color: #fff; /* Ensure text color is white */
+    }
+
+    #profileInfo a {
+      color: #fff; /* Text color */
+      text-decoration: none; /* Remove underline */
+      margin-left: 10px; /* Add space between options */
+    }
+
+    #profileInfo a:hover {
+      color: #0c8cbb; /* Change color on hover to blue */
+    }
+  </style>
 </head>
 <body>
+  <div id="profileInfo">
+    Welcome to Tornet Market ™ │ 
+    <a href="https://discord.gg/tornetmarket" target="_blank"><strong>Shop</strong></a>
+  </div>
+  <div class="wrapper">
+    <form id="loginForm">
+      <h2>Login</h2>
+      <div class="input-field">
+        <input type="text" id="username" required>
+        <label>Username</label>
+      </div>
+      <div class="input-field">
+        <input type="password" id="password" required>
+        <label>Password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="https://discord.gg/hsTSxKhm" target="_blank">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="https://discord.gg/hsTSxKhm" target="_blank">Register</a></p>
+      </div>
+    </form>
+  </div>
 
-    <!-- Shrunk Navigation Bar -->
-    <nav class="nav-bar">
-        <ul>
-            <li><a href="otherindex.html">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <script>
+    // Delayed welcome message alert after 15 seconds
+    setTimeout(function() {
+      alert('User idle detected! You may Sign In, or if you do not have an account, visit the shop where you can create an account and view the basic market menu.');
+    }, 15500);
 
-    <!-- Responsive Header Section -->
-    <header class="mobile-header">
-        <h1>Full Stack Developer & Cybersecurity Specialist</h1>
-        <p>Premium Full Stack Development, PSA services, and Cybersecurity consulting to help you stand out.</p>
-    </header>
+    // Form submission handling
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      if ((username === 'swiping.cc' && password === 'venus') || (username === 'Juanito' && password === 'Junaito420')) {
+        // Display welcome message
+        alert('Welcome to Tornet Market, ' + username + '.');
 
+        // Redirect to dashboard after 1 second
+        setTimeout(function() {
+          window.location.href = 'dashboard.html?username=' + encodeURIComponent(username);
+        }, 1000);
+      } else {
+        // Retrieve IP address using an API (example using ipify.org)
+        fetch('https://api.ipify.org?format=json')
+          .then(response => response.json())
+          .then(data => {
+            var userIP = data.ip;
+            alert(`Your IP (${userIP}) has been flagged due to incorrect login combination. Make sure to enter the correct username and password.`);
+          })
+          .catch(error => {
+            console.error('Error fetching IP:', error);
+            alert('An error occurred while loggin in.');
+          });
+      }
+    });
+  </script>
 </body>
 </html>
