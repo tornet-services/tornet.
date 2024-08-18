@@ -213,3 +213,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// JavaScript to detect screen size and redirect to mobile page
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.innerWidth <= 768) {
+        window.location.href = "otherindex.html";
+    }
+});
